@@ -1,11 +1,10 @@
-// import "../styles/globals.css";
+import "styles/globals.css";
 
 import { ApolloProvider } from "@apollo/client";
 import { SaleorProvider } from "@saleor/sdk";
 import { NextPage } from "next";
 import { AppProps } from "next/app";
 import { ReactElement, ReactNode } from "react";
-import 'tailwindcss/tailwind.css';
 
 import apolloClient, { saleorClient } from "@/lib/graphql";
 

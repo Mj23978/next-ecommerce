@@ -1,32 +1,65 @@
-# Developer Portfolio
+# React Storefront
 
-### Developer Portfolio made with Next JS Framer Motion and TypeScript.
+Next Ecommerce is an open-source frontend e-commerce platform.
 
-![Portfolio](https://i.ytimg.com/vi/sP2o_P5f3Rg/hq720.jpg?sqp=-oaymwEjCNACELwBSFryq4qpAxUIARUAAAAAGAElAADIQj0AgKJDeAE=&rs=AOn4CLDxr7NF1-sStgjihp4phIeW8QfgmA)
+- Next.js
+- TypeScript
+- GraphQL with Apollo Client
+- Tailwind CSS
+- Saleor
+- React Hook Form
+- Next Auth
 
-## Installation
+## Motivation
+
+**modern & fast**:
+Project is focusing on best practices for e-commerce, like: SSR & ISR, image optimization.
+
+**easily customizable**:
+TailwindCSS can be easily extended and tweaked, or completely changed to your favorite css solution.
+
+**works out-of-the-box**:
+Pre configured tools for DX.
+
+## Development
+
+### Configuration
+
+The `.env` file contains environment variables used by the application. You can override them by creating `.env.local` file.
+
+[Read more](https://nextjs.org/docs/basic-features/environment-variables)
+
+### GraphQL queries
+
+Graphql queries are located under the `./graphql`. We strongly encourage use of [fragments](https://graphql.org/learn/queries/#fragments), which minimizes code duplication and plays nicely with the TypeScript, during transformation of incoming data.
+
+#### Workflow
+
+- Modify or create GraphQL file. For example, new query at `./graphql/queries/FeaturedProducts.graphql`
+- Run `npm run generate` command
+- New query will be added to the `./saleor/api.tsx` file
+- Import generated hook (`import { useFeaturedProductsQuery } from "@/saleor/api";`) in your component code
+
+## React and Next.js code structure
+
+Project use [file based routing](https://nextjs.org/docs/routing/introduction). Available routes can be found at `./pages`. Dynamic routes (for example `./pages/products/[slug].tsx`) are generated at build time based on [`getStaticPaths`](https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation).
+
+When creating new components, please follow the [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/).
+
+Code for the payment gateways can be found at `./components/checkout/payments`. At the moment we support [Saleor test gateway](https://docs.saleor.io/docs/3.0/developer/available-plugins/dummy-credit-card) and basic flow for Stripe.
+
+### Code style
+
+Before commiting the code, make sure to run code linters and formatters:
 
 ```bash
-npm run dev
+npm run lint
 ```
 
-## The project is deployed on Vercel : 
-[Deployed Version](https://sumit.dey-sumit.vercel.app/)
+### Bundle metrics
 
-## Project tutorial on YouTube : 
-  [Full Playlist of Dev Portfolio Project](https://www.youtube.com/watch?v=Nhb67Eb98tU&list=PLQKg8mIgoxKpvIWyxMM-Nn6s_iww0KX53)
+If you want to check how your changes impact page size, use command:
 
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
---- 
-## Contact
-
-Sumit Dey- [code.sumax@gmail.com](mailto:code.sumax@gmail.com)
-
-Youtube Channel: [https://www.youtube.com/c/BackbenchCoder](https://www.youtube.com/c/BackbenchCoder)
-
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+```bash
+npm run analyze-build
+```
