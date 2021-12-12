@@ -1,6 +1,9 @@
 # React Storefront
 
+
 Next Ecommerce is an open-source frontend e-commerce platform.
+
+![HomePage](./public/HomePage.png)
 
 - Next.js
 - TypeScript
@@ -17,11 +20,6 @@ Project is focusing on best practices for e-commerce, like: SSR & ISR, image opt
 
 **easily customizable**:
 TailwindCSS can be easily extended and tweaked, or completely changed to your favorite css solution.
-
-**works out-of-the-box**:
-Pre configured tools for DX.
-
-## Development
 
 ### Configuration
 
@@ -46,15 +44,6 @@ Project use [file based routing](https://nextjs.org/docs/routing/introduction). 
 
 When creating new components, please follow the [React TypeScript Cheatsheet](https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/function_components/).
 
-Code for the payment gateways can be found at `./components/checkout/payments`. At the moment we support [Saleor test gateway](https://docs.saleor.io/docs/3.0/developer/available-plugins/dummy-credit-card) and basic flow for Stripe.
-
-### Code style
-
-Before commiting the code, make sure to run code linters and formatters:
-
-```bash
-npm run lint
-```
 
 ### Bundle metrics
 
